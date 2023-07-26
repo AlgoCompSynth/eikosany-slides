@@ -2,7 +2,7 @@
 title: "Eikosany: Microtonal Algorithmic Composition with R"
 author: "M. Edward (Ed) Borasky"
 date: "2023-07-25"
-bibliography: "eikosany.bibtex"
+bibliography: "REFERENCES.bib"
 format:
   beamer:
     theme: "Montpellier"
