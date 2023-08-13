@@ -1,0 +1,20 @@
+---
+title: "Eikosany: Microtonal Algorithmic Composition with R"
+author: "M. Edward (Ed) Borasky"
+date: "2023-08-19"
+bibliography: "REFERENCES.bib"
+format:
+  beamer:
+    theme: "Montpellier"
+    incremental: false
+    slide_level: 2
+editor: visual
+---
+
+# Microtonal Music and Algorithmic Composition
+
+# Current Outputs / Workflow
+
+# Roadmap
+
+## References
