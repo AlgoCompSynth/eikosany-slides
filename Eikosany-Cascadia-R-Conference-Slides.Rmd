@@ -10,6 +10,11 @@ output:
     slide_level: 2
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
 # Algorithmic Composition
 
 ## Overview of Methods [@nierhaus2009algorithmic]
@@ -51,7 +56,42 @@ output:
 
 # Erv Wilson [@narushima2019microtonality]
 
+## Ervin Wilson (June 11, 1928 – December 8, 2016)[1]
+- Mexican/American (dual citizen)
+- Prolific music theorist
+- Developed keyboard layouts, scales and lattices
+- Primarily known for just microtonal scales
+
+## Combination Product Sets
+- Focus of the `eikosany` package
+- Start with a set of _harmonic factors_
+- Take all the combinations of the factors with `N` elements
+- Take the products of the combinations
+- Reduce the products to ratios in [1, 2) - multiply or divide by
+powers of two
+- Sort
+
+## Example: 1 3 5 7 Hexany
+- Combination products: `1*3, 1*5, 1*7, 3*5, 3*7, 5*7`
+- Raw ratios (divide by smallest product): `1 5/3 7/3 5 7 35/3`
+- Reduce: `1 5/3 7/6 5/4 7/4 35/24`
+- Sort: `1 7/6 5/4 35/24 5/3 7/4`
+
+## Using the package!
+```{r}
+hexany <- eikosany::cps_scale_table(
+  harmonics = c(1, 3, 5, 7),
+  choose = 2
+)
+print(hexany$ratio_frac)
+
+```
+
 # Current Outputs / Workflow
+
+## Basic Workflow
+1. Pick scale - most common are hexanies and eikosonaies
+2. Generate scale table
 
 # Roadmap
 
