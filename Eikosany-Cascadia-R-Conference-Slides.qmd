@@ -29,7 +29,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 -   Markov Models / Stochastic
     -   Pioneered by Iannis Xenakis [@xenakis1992formalized]
-    -   [for example, @Borasky2021a - random walks on chord matrix]
+    -   [for example, @Borasky2021a; @partch1979genesis - random
+    walk on Harry Partch 11-limit tonality diamond]
 
 # 2 Musical Scales
 
@@ -111,11 +112,7 @@ print(knitr::kable(eikosany::cps_scale_table()))
 1. Clean up documentation and do a first release (August)
     - Hoping to release an album / EP on Bandcamp
 2. Open feature requests for triage
-3. Move forward with different project in September
-    - [CLAMS](https://github.com/AlgoCompSynth/CLAMS) - Forth-based microcontroller synthesizer
-    - CLAMS will use Quarto for "literate programming"
-    - Probably VSCode - seems to be the best polyglot Quarto tool
-
+3. Add consonance analysis capability [@sethares2013tuning]
 
 # Appendix - Microtonal Music Resources
 
