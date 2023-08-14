@@ -3,11 +3,7 @@ title: "Eikosany: Microtonal Algorithmic Composition with R"
 author: "M. Edward (Ed) Borasky"
 date: "2023-08-19"
 bibliography: REFERENCES.bib
-output:
-  beamer_presentation:
-    theme: "Montpellier"
-    incremental: false
-    slide_level: 2
+format: revealjs
 ---
 
 ```{r setup, include=FALSE}
@@ -15,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```
 
-# Algorithmic Composition
+# 1 Algorithmic Composition
 
 ## Overview of Methods [@nierhaus2009algorithmic]
 
@@ -33,18 +29,20 @@ knitr::opts_chunk$set(echo = TRUE)
     -   Pioneered by Iannis Xenakis [@xenakis1992formalized]
     -   [for example, @Borasky2021a - random walks on chord matrix]
 
-# Musical Scales
+# 2 Musical Scales
 
 ## Types of scales
 
 -   Standard "western" tuning - 12 equally-spaced tones / octave
     -   abbreviated 12-TET or 12-EDO
 -   Alternative tuning - anything else
-    -   scales from other cultures
-    -   "just" scales - scales based on rational numbers
-    -   scale periods different from the octave
-    -   scale period divided into more than 12 tones
-    -   combinations of the above!
+
+## Alternative scales
+-   scales from other cultures
+-   "just" scales - scales based on rational numbers
+-   scale periods different from the octave
+-   scale period divided into more than 12 tones
+-   combinations of the above!
 
 ## Microtonal music
 
@@ -54,9 +52,9 @@ knitr::opts_chunk$set(echo = TRUE)
     -   24-TET aka quarter tones
     -   31-TET
 
-# Erv Wilson [@narushima2019microtonality]
+# 3 Erv Wilson [@narushima2019microtonality]
 
-## Ervin Wilson (June 11, 1928 – December 8, 2016)[1]
+## Ervin Wilson (June 11, 1928 – December 8, 2016)
 - Mexican/American (dual citizen)
 - Prolific music theorist
 - Developed keyboard layouts, scales and lattices
@@ -83,16 +81,23 @@ hexany <- eikosany::cps_scale_table(
   harmonics = c(1, 3, 5, 7),
   choose = 2
 )
-print(hexany$ratio_frac)
+print(knitr::kable(hexany))
 
 ```
 
-# Current Outputs / Workflow
+## The 1 3 5 7 9 11 Eikosany
+```{r}
+# it's the default!
+print(knitr::kable(eikosany::cps_scale_table()))
+
+```
+
+# 4 Workflow
 
 ## Basic Workflow
-1. Pick scale - most common are hexanies and eikosonaies
+1. Pick scale - most common are hexanies, dekanies and eikosonaies
 2. Generate scale table
 
-# Roadmap
+# 5 Roadmap
 
 # References
