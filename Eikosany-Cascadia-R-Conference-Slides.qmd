@@ -3,7 +3,9 @@ title: "Eikosany: Microtonal Algorithmic Composition with R"
 author: "M. Edward (Ed) Borasky"
 date: "2023-08-19"
 bibliography: REFERENCES.bib
-format: revealjs
+format: 
+  revealjs:
+    theme: dark
 ---
 
 ```{r setup, include=FALSE}
