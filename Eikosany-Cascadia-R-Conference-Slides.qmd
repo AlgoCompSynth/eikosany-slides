@@ -61,26 +61,30 @@ knitr::opts_chunk$set(echo = TRUE)
 - Mexican/American (dual citizen)
 - Prolific music theorist
 - Developed keyboard layouts, scales and lattices
-- Primarily known for just microtonal scales
+- Primarily known for microtonal just scales
 
-## Combination Product Sets
+## Combination Product Sets {.smaller}
 - Focus of the `eikosany` package
 - Start with a set of _harmonic factors_
 - Take all the combinations of the factors with `N` elements
+    - Pascal's Triangle is your friend
 - Take the products of the combinations
-- Reduce the products to ratios in [1, 2) - multiply or divide by
-powers of two
+- Reduce the products to ratios in [1, 2)
+    1. Divide all by smallest product
+    2. Multiply or divide by powers of two to get values in [1, 2)
 - Sort
 
-## Example: 1 3 5 7 Hexany
-- Combination products: `1*3, 1*5, 1*7, 3*5, 3*7, 5*7`
+## Example: 1-3-5-7 Hexany
+- Products of combinations: `1*3, 1*5, 1*7, 3*5, 3*7, 5*7`
 - Raw ratios (divide by smallest product): `1 5/3 7/3 5 7 35/3`
 - Reduce: `1 5/3 7/6 5/4 7/4 35/24`
 - Sort: `1 7/6 5/4 35/24 5/3 7/4`
 
 ## Using the package!
 ```{r}
-hexany <- eikosany::cps_scale_table(
+remotes::install_github("AlgoCompSynth/eikosany", quiet = TRUE)
+library(eikosany)
+hexany <- cps_scale_table(
   harmonics = c(1, 3, 5, 7),
   choose = 2
 )
@@ -88,14 +92,35 @@ print(knitr::kable(hexany))
 
 ```
 
-## The 1 3 5 7 9 11 Eikosany
+- The prime on the bottom row indicates the next octave
+
+# 4 Pseudo-Demo
+
+## The 1-3-5-7-9-11 Eikosany
+- Six harmonic factors, choose 3
 ```{r}
-# it's the default!
-print(knitr::kable(eikosany::cps_scale_table()))
+eikosany_scale_table <- cps_scale_table(
+  harmonics = c(1, 3, 5, 7, 9, 11),
+  choose = 3
+)
 
 ```
 
-# 4 Workflow
+## The Scale Table is a `data.table`!
+
+```{r}
+library(data.table)
+top <- eikosany_scale_table[degree < 10]
+bottom <- eikosany_scale_table[degree >= 10]
+print(knitr::kable(top))
+
+```
+
+## The Rest
+```{r}
+print(knitr::kable(bottom))
+
+```
 
 ## Basic Workflow
 1. Pick scale - most common are hexanies, dekanies and eikosonaies
