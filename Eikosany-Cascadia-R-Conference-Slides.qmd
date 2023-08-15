@@ -88,7 +88,7 @@ hexany <- cps_scale_table(
   harmonics = c(1, 3, 5, 7),
   choose = 2
 )
-print(knitr::kable(hexany))
+print(hexany)
 
 ```
 
@@ -106,25 +106,65 @@ eikosany_scale_table <- cps_scale_table(
 
 ```
 
-## The Scale Table is a `data.table`!
+## The Scale Table is a `data.table`! {.smaller}
 
 ```{r}
 library(data.table)
-top <- eikosany_scale_table[degree < 10]
-bottom <- eikosany_scale_table[degree >= 10]
-print(knitr::kable(top))
+print(eikosany_scale_table)
 
 ```
 
-## The Rest
+## What Does It Sound Like?
+- To hear the scale:
+    1. Get a synthesizer
+    2. Map the keys of the synthesizer to the notes of the scale
+    3. Play the keys
+- But that's kind of expensive and I'm in a hurry
+- So I'll emulate it in R!
+
+## First Step - Make a Keyboard Map
+- Maps MIDI note numbers to frequencies
+- MIDI note number 60 is middle C
+- Our 20-note scale is note numbers 60:80
+- Keyboard maps are also data.tables
 ```{r}
-print(knitr::kable(bottom))
+# this is the whole keyboard
+eikosany_map <- keyboard_map(eikosany_scale_table)
+
+# extract scale from middle C
+scale_map <- eikosany_map[
+  note_number %in% 60:80,
+  list(note_number, freq)
+]
+
+```
+## The Scale Map {.smaller}
+```{r}
+print(scale_map)
 
 ```
 
-## Basic Workflow
-1. Pick scale - most common are hexanies, dekanies and eikosonaies
-2. Generate scale table
+## Second Step - Make Waves!
+- uses `seewave` and `tuneR` [@sueur2018sound]
+- creates a _multisample_ - a collection of `WAV` files
+    - can be used in sample-based workflows
+    - emulates multisamples captured by [1010music
+    Blackbox](https://1010music.com/product/blackbox)
+
+## Make Waves!
+```{r}
+scale_sawtooth_multisample(
+  keyboard_map = scale_map,
+  start_note_number = 60,
+  end_note_number = 80,
+  duration_sec = 2,
+  output_directory = "~/Eikosany-Scale-Multisample"
+)
+
+```
+
+## Play Files with a Media Player
+- 40 seconds you'll never get back
 
 # 5 Roadmap
 
