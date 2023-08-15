@@ -207,6 +207,11 @@ for more ways of making microtonal music.
 
 ## Websites
 
+- [Kraig Grady's Anaphoria Wilson
+Archive](https://anaphoria.com/wilson.html) Australian-American
+composer Kraig Grady studied with Erv Wilson for many years and
+has collected Wilson's writings.
+
 - [Sevish's Scale
 Workshop](https://sevish.com/scaleworkshop/guide.htm).
 This is a web-based tool for working with musical scales.
@@ -216,5 +221,13 @@ This is a web-based tool for working with musical scales.
 [Counterpoint](https://ctpt.co/), are browser-based applications
 for creating microtonal scales and making generative music with
 them.
+
+## YouTube Playlists
+- [Surfing the Sonic
+Sky](https://youtube.com/@SurfingTheSonicSky) 
+- [Combination Product Sets -
+Music](https://youtube.com/playlist?list=PLGT-itRivwZWAb84lXEaNmlEVOimTo9zT)
+- [Combination Product Sets -
+Theory](https://youtube.com/playlist?list=PLGT-itRivwZUjMKWL8UMb0vi8WT_UjcvC)
 
 # References
