@@ -441,8 +441,8 @@ M. Edward (Ed) Borasky
 </ul>
 </div>
 </section>
-<section id="my-main-focus" class="slide level2">
-<h2>My Main Focus</h2>
+<section id="my-main-compositional-focus" class="slide level2">
+<h2>My Main Compositional Focus</h2>
 <div>
 <ul>
 <li class="fragment">Markov Models / Stochastic</li>
@@ -471,7 +471,7 @@ M. Edward (Ed) Borasky
 <ul>
 <li class="fragment">Standard “western” tuning - 12 equally-spaced tones / octave
 <ul>
-<li class="fragment">abbreviated 12-TET or 12-EDO</li>
+<li class="fragment">abbreviated 12-TET (12 tone equal temperament) or 12-EDO (12 equal divisions of the octave)</li>
 </ul></li>
 <li class="fragment">Alternative tuning - anything else</li>
 </ul>
@@ -610,19 +610,18 @@ M. Edward (Ed) Borasky
 </ul></li>
 </ul>
 </div>
-</section></section>
-<section id="harmonic-and-subharmonic-chords" class="title-slide slide level1 center">
-<h1>Harmonic and Subharmonic Chords</h1>
+</section>
+<section id="harmonic-and-subharmonic-chords" class="slide level2">
+<h2>Harmonic and Subharmonic Chords</h2>
 <div>
 <ul>
 <li class="fragment">Each chord has a harmonic and subharmonic form</li>
 <li class="fragment">Roughly corresponds to major and minor chords</li>
 <li class="fragment">Four factors: four harmonic triads and four subharmonic triads</li>
-<li class="fragment">Six factors: 15 harmonic triads and 15 subharmonic triads</li>
+<li class="fragment">Six factors: 15 harmonic tetrads and 15 subharmonic tetrads</li>
 </ul>
 </div>
-</section>
-
+</section></section>
 <section id="the-hexany-chord-table" class="title-slide slide level1 center">
 <h1>The Hexany Chord Table</h1>
 <div class="cell">
@@ -659,11 +658,10 @@ M. Edward (Ed) Borasky
 <span id="cb5-4"><a href="#cb5-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="the-scale-table-is-a-data.table" class="slide level2 smaller">
-<h2>The Scale Table is a <code>data.table</code>!</h2>
+<section id="the-eikosany-scale-table" class="slide level2 smaller">
+<h2>The Eikosany Scale Table</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(data.table)</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">print</span>(eikosany_scale_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">print</span>(eikosany_scale_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    note_name    ratio ratio_frac ratio_cents interval_cents degree
  1:     1x3x5 1.000000          1     0.00000             NA      0
@@ -688,6 +686,48 @@ M. Edward (Ed) Borasky
 20:    3x7x11 1.925000      77/40  1133.83013       84.46719     19
 21:    1x3x5' 2.000000          2  1200.00000       66.16987     20
     note_name    ratio ratio_frac ratio_cents interval_cents degree</code></pre>
+</div>
+</div>
+</section>
+<section id="the-eikosany-chord-table" class="slide level2 smaller">
+<h2>The Eikosany Chord Table</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">print</span>(eikosany_chord_table <span class="ot">&lt;-</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">cps_chord_table</span>(eikosany_scale_table)</span>
+<span id="cb8-3"><a href="#cb8-3"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           chord     degrees chord_index is_subharm
+ 1:      1:3:5:7   1:6:11:15           1          0
+ 2:  /1:/3:/5:/7   0:5:10:16           1          1
+ 3:      1:3:5:9  7:11:14:19           2          0
+ 4:  /1:/3:/5:/9   0:4:12:17           2          1
+ 5:     1:3:5:11   2:8:11:13           3          0
+ 6: /1:/3:/5:/11    0:3:9:18           3          1
+ 7:      1:3:7:9   1:9:14:18           4          0
+ 8:  /1:/3:/7:/9  2:10:13:17           4          1
+ 9:     1:3:7:11    1:4:8:12           5          0
+10: /1:/3:/7:/11   3:7:10:19           5          1
+11:     1:3:9:11   5:8:14:16           6          0
+12: /1:/3:/9:/11   3:6:15:17           6          1
+13:      1:5:7:9    3:6:9:19           7          0
+14:  /1:/5:/7:/9    2:5:8:12           7          1
+15:     1:5:7:11   4:6:13:17           8          0
+16: /1:/5:/7:/11   5:7:14:18           8          1
+17:     1:5:9:11 10:13:16:19           9          0
+18: /1:/5:/9:/11  1:12:15:18           9          1
+19:     1:7:9:11    0:4:9:16          10          0
+20: /1:/7:/9:/11   2:7:11:15          10          1
+21:      3:5:7:9   3:7:15:18          11          0
+22:  /3:/5:/7:/9   4:8:13:16          11          1
+23:     3:5:7:11  2:12:15:17          12          0
+24: /3:/5:/7:/11  9:14:16:19          12          1
+25:     3:5:9:11    2:5:7:10          13          0
+26: /3:/5:/9:/11     1:4:6:9          13          1
+27:     3:7:9:11   0:5:12:18          14          0
+28: /3:/7:/9:/11  6:11:13:19          14          1
+29:     5:7:9:11   0:3:10:17          15          0
+30: /5:/7:/9:/11   1:8:11:14          15          1
+           chord     degrees chord_index is_subharm</code></pre>
 </div>
 </div>
 </section>
@@ -716,20 +756,20 @@ M. Edward (Ed) Borasky
 <li>Keyboard maps are also data.tables</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># this is the whole keyboard</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>eikosany_map <span class="ot">&lt;-</span> <span class="fu">keyboard_map</span>(eikosany_scale_table)</span>
-<span id="cb8-3"><a href="#cb8-3"></a></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="co"># extract scale from middle C</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a>scale_map <span class="ot">&lt;-</span> eikosany_map[</span>
-<span id="cb8-6"><a href="#cb8-6"></a>  note_number <span class="sc">%in%</span> <span class="dv">60</span><span class="sc">:</span><span class="dv">80</span>,</span>
-<span id="cb8-7"><a href="#cb8-7"></a>  <span class="fu">list</span>(note_number, freq)</span>
-<span id="cb8-8"><a href="#cb8-8"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># this is the whole keyboard</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>eikosany_map <span class="ot">&lt;-</span> <span class="fu">keyboard_map</span>(eikosany_scale_table)</span>
+<span id="cb10-3"><a href="#cb10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="co"># extract scale from middle C</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>scale_map <span class="ot">&lt;-</span> eikosany_map[</span>
+<span id="cb10-6"><a href="#cb10-6"></a>  note_number <span class="sc">%in%</span> <span class="dv">60</span><span class="sc">:</span><span class="dv">80</span>,</span>
+<span id="cb10-7"><a href="#cb10-7"></a>  <span class="fu">list</span>(note_number, freq)</span>
+<span id="cb10-8"><a href="#cb10-8"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="the-scale-map" class="slide level2 smaller">
 <h2>The Scale Map</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">print</span>(scale_map)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">print</span>(scale_map)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    note_number     freq
  1:          60 261.6256
@@ -773,13 +813,13 @@ M. Edward (Ed) Borasky
 <section id="make-waves" class="slide level2">
 <h2>Make Waves!</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">scale_sawtooth_multisample</span>(</span>
-<span id="cb11-2"><a href="#cb11-2"></a>  <span class="at">keyboard_map =</span> scale_map,</span>
-<span id="cb11-3"><a href="#cb11-3"></a>  <span class="at">start_note_number =</span> <span class="dv">60</span>,</span>
-<span id="cb11-4"><a href="#cb11-4"></a>  <span class="at">end_note_number =</span> <span class="dv">80</span>,</span>
-<span id="cb11-5"><a href="#cb11-5"></a>  <span class="at">duration_sec =</span> <span class="dv">2</span>,</span>
-<span id="cb11-6"><a href="#cb11-6"></a>  <span class="at">output_directory =</span> <span class="st">"~/Eikosany-Scale-Multisample"</span></span>
-<span id="cb11-7"><a href="#cb11-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">scale_sawtooth_multisample</span>(</span>
+<span id="cb13-2"><a href="#cb13-2"></a>  <span class="at">keyboard_map =</span> scale_map,</span>
+<span id="cb13-3"><a href="#cb13-3"></a>  <span class="at">start_note_number =</span> <span class="dv">60</span>,</span>
+<span id="cb13-4"><a href="#cb13-4"></a>  <span class="at">end_note_number =</span> <span class="dv">80</span>,</span>
+<span id="cb13-5"><a href="#cb13-5"></a>  <span class="at">duration_sec =</span> <span class="dv">2</span>,</span>
+<span id="cb13-6"><a href="#cb13-6"></a>  <span class="at">output_directory =</span> <span class="st">"~/Eikosany-Scale-Multisample"</span></span>
+<span id="cb13-7"><a href="#cb13-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "~/Eikosany-Scale-Multisample"</code></pre>
 </div>
@@ -826,7 +866,7 @@ M. Edward (Ed) Borasky
 <ul>
 <li>GitHub: <a href="https://github.com/AlgoCompSynth/eikosany" class="uri">https://github.com/AlgoCompSynth/eikosany</a></li>
 <li>Pkgdown: <a href="https://algocompsynth.github.io/eikosany" class="uri">https://algocompsynth.github.io/eikosany</a></li>
-<li>These slides: <a href="https://github.com/AlgoCompSynth/eikosany/tree/main/inst/Eikosany-Cascadia-R-Conference-Slides" class="uri">https://github.com/AlgoCompSynth/eikosany/tree/main/inst/Eikosany-Cascadia-R-Conference-Slides</a></li>
+<li>These slides: <a href="https://github.com/AlgoCompSynth/eikosany-slides" class="uri">https://github.com/AlgoCompSynth/eikosany-slides</a></li>
 </ul>
 </section></section>
 <section>

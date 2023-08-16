@@ -27,7 +27,7 @@ knitr::opts_chunk$set(echo = TRUE)
 -   Artificial Neural Networks
 :::
 
-## My Main Focus
+## My Main Compositional Focus
 
 ::: incremental
 -   Markov Models / Stochastic
@@ -47,8 +47,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Types of scales
 
 ::: incremental
--   Standard "western" tuning - 12 equally-spaced tones / octave
-    -   abbreviated 12-TET or 12-EDO
+-   Standard "western" tuning - 12 equally-spaced tones /
+octave
+    -   abbreviated 12-TET (12 tone equal temperament) or 12-EDO (12 equal divisions of the octave)
 -   Alternative tuning - anything else
 :::
 
@@ -101,9 +102,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ::: incremental
 -   Take all the combinations of the factors with `choose` elements
 -   Take the products of the combinations
--   Reduce the products to ratios in \[1, 2)
+-   Reduce the products to ratios in [1, 2)
     1.  Divide all by smallest product
-    2.  Multiply or divide by powers of two to get values in \[1, 2)
+    2.  Multiply or divide by powers of two to get values in [1, 2)
 -   Sort
 :::
 
@@ -149,13 +150,13 @@ print(hexany_scale_table)
     -   Six factors: four combinations (15 tetrads)
 :::
 
-# Harmonic and Subharmonic Chords
+## Harmonic and Subharmonic Chords
 
 ::: incremental
 -   Each chord has a harmonic and subharmonic form
 -   Roughly corresponds to major and minor chords
 -   Four factors: four harmonic triads and four subharmonic triads
--   Six factors: 15 harmonic triads and 15 subharmonic triads
+-   Six factors: 15 harmonic tetrads and 15 subharmonic tetrads
 :::
 
 # The Hexany Chord Table
@@ -163,6 +164,7 @@ print(hexany_scale_table)
 ```{r}
 hexany_chord_table <- cps_chord_table(hexany_scale_table)
 print(hexany_chord_table)
+
 ```
 
 # 4 Pseudo-Demo
@@ -179,12 +181,19 @@ eikosany_scale_table <- cps_scale_table(
 
 ```
 
-## The Scale Table is a `data.table`! {.smaller}
+## The Eikosany Scale Table {.smaller}
 
 ```{r}
-library(data.table)
 print(eikosany_scale_table)
 
+```
+
+## The Eikosany Chord Table {.smaller}
+
+```{r}
+print(eikosany_chord_table <-
+  cps_chord_table(eikosany_scale_table)
+)
 ```
 
 ## What Does It Sound Like?
@@ -274,7 +283,7 @@ scale_sawtooth_multisample(
 
 -   GitHub: <https://github.com/AlgoCompSynth/eikosany>
 -   Pkgdown: <https://algocompsynth.github.io/eikosany>
--   These slides: <https://github.com/AlgoCompSynth/eikosany/tree/main/inst/Eikosany-Cascadia-R-Conference-Slides>
+-   These slides: <https://github.com/AlgoCompSynth/eikosany-slides>
 
 # Appendix - Microtonal Music Resources
 
