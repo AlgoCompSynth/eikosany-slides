@@ -157,6 +157,8 @@ print(hexany_scale_table)
 -   Roughly corresponds to major and minor chords
 -   Four factors: four harmonic triads and four subharmonic triads
 -   Six factors: 15 harmonic tetrads and 15 subharmonic tetrads
+- In the chord table, the subharmonic ones have "/" in
+their names
 :::
 
 # The Hexany Chord Table
@@ -194,6 +196,7 @@ print(eikosany_scale_table)
 print(eikosany_chord_table <-
   cps_chord_table(eikosany_scale_table)
 )
+
 ```
 
 ## What Does It Sound Like?
@@ -212,8 +215,7 @@ print(eikosany_chord_table <-
 -   Maps MIDI note numbers to frequencies
 -   MIDI note numbers range from 0 to 127
 -   MIDI note number 60 is middle C
--   Our 20-note scale is note numbers 60:80
--   Keyboard maps are also data.tables
+-   Our 20-note scale is note numbers 60:79
 
 ```{r}
 # this is the whole keyboard
@@ -246,19 +248,27 @@ print(scale_map)
 ## Make Waves!
 
 ```{r}
-scale_sawtooth_multisample(
+scale_multisample(
   keyboard_map = scale_map,
   start_note_number = 60,
   end_note_number = 80,
   duration_sec = 2,
-  output_directory = "~/Eikosany-Scale-Multisample"
+  output_directory = "./Eikosany-Scale-Multisample"
 )
 
 ```
 
-## Play Files with a Media Player
+## (Optional) Play Files with a Media Player
 
 -   40 seconds you'll never get back
+
+## (Optional) Play Some Eikosany Chords
+
+```{r}
+eikosany_scale_table <- cps_scale_table()
+render_cps_chords(eikosany_scale_table, "./eikosany_chords")
+
+```
 
 # 5 Roadmap
 
@@ -277,6 +287,11 @@ scale_sawtooth_multisample(
     -   Hoping to release an album / EP on Bandcamp
 2.  Open feature requests for triage
 3.  Add consonance analysis capability [@sethares2013tuning]
+4. Remove the MIDI functionality!
+    - MIDI is a great language for 4/4 time 12-EDO music
+    - For microtonal algorithmic composition, not so much
+    - The "other tools" in the Appendix are designed to
+    deal with MIDI so I don't have to!
 :::
 
 ## Where does all this stuff live?

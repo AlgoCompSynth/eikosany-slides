@@ -619,6 +619,7 @@ M. Edward (Ed) Borasky
 <li class="fragment">Roughly corresponds to major and minor chords</li>
 <li class="fragment">Four factors: four harmonic triads and four subharmonic triads</li>
 <li class="fragment">Six factors: 15 harmonic tetrads and 15 subharmonic tetrads</li>
+<li class="fragment">In the chord table, the subharmonic ones have “/” in their names</li>
 </ul>
 </div>
 </section></section>
@@ -752,8 +753,7 @@ M. Edward (Ed) Borasky
 <li>Maps MIDI note numbers to frequencies</li>
 <li>MIDI note numbers range from 0 to 127</li>
 <li>MIDI note number 60 is middle C</li>
-<li>Our 20-note scale is note numbers 60:80</li>
-<li>Keyboard maps are also data.tables</li>
+<li>Our 20-note scale is note numbers 60:79</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># this is the whole keyboard</span></span>
@@ -813,23 +813,33 @@ M. Edward (Ed) Borasky
 <section id="make-waves" class="slide level2">
 <h2>Make Waves!</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">scale_sawtooth_multisample</span>(</span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">scale_multisample</span>(</span>
 <span id="cb13-2"><a href="#cb13-2"></a>  <span class="at">keyboard_map =</span> scale_map,</span>
 <span id="cb13-3"><a href="#cb13-3"></a>  <span class="at">start_note_number =</span> <span class="dv">60</span>,</span>
 <span id="cb13-4"><a href="#cb13-4"></a>  <span class="at">end_note_number =</span> <span class="dv">80</span>,</span>
 <span id="cb13-5"><a href="#cb13-5"></a>  <span class="at">duration_sec =</span> <span class="dv">2</span>,</span>
-<span id="cb13-6"><a href="#cb13-6"></a>  <span class="at">output_directory =</span> <span class="st">"~/Eikosany-Scale-Multisample"</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a>  <span class="at">output_directory =</span> <span class="st">"./Eikosany-Scale-Multisample"</span></span>
 <span id="cb13-7"><a href="#cb13-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "~/Eikosany-Scale-Multisample"</code></pre>
+<pre><code>[1] "./Eikosany-Scale-Multisample"</code></pre>
 </div>
 </div>
 </section>
-<section id="play-files-with-a-media-player" class="slide level2">
-<h2>Play Files with a Media Player</h2>
+<section id="optional-play-files-with-a-media-player" class="slide level2">
+<h2>(Optional) Play Files with a Media Player</h2>
 <ul>
 <li>40 seconds you’ll never get back</li>
 </ul>
+</section>
+<section id="optional-play-some-eikosany-chords" class="slide level2">
+<h2>(Optional) Play Some Eikosany Chords</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>eikosany_scale_table <span class="ot">&lt;-</span> <span class="fu">cps_scale_table</span>()</span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">render_cps_chords</span>(eikosany_scale_table, <span class="st">"./eikosany_chords"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "./eikosany_chords"</code></pre>
+</div>
+</div>
 </section></section>
 <section>
 <section id="roadmap" class="title-slide slide level1 center">
@@ -858,6 +868,12 @@ M. Edward (Ed) Borasky
 </ul></li>
 <li class="fragment">Open feature requests for triage</li>
 <li class="fragment">Add consonance analysis capability <span class="citation" data-cites="sethares2013tuning">(<a href="#/references" role="doc-biblioref" onclick="">Sethares 2013</a>)</span></li>
+<li class="fragment">Remove the MIDI functionality!
+<ul>
+<li class="fragment">MIDI is a great language for 4/4 time 12-EDO music</li>
+<li class="fragment">For microtonal algorithmic composition, not so much</li>
+<li class="fragment">The “other tools” in the Appendix are designed to deal with MIDI so I don’t have to!</li>
+</ul></li>
 </ol>
 </div>
 </section>
