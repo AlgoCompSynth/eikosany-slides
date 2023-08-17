@@ -117,7 +117,7 @@ octave
 -   Sort: `1 7/6 5/4 35/24 5/3 7/4`
 :::
 
-## Using the package!
+## Using the package! {.smaller}
 
 ```{r}
 remotes::install_github("AlgoCompSynth/eikosany", quiet = TRUE)
@@ -161,7 +161,7 @@ print(hexany_scale_table)
 their names
 :::
 
-# The Hexany Chord Table
+# The Hexany Chord Table {.smaller}
 
 ```{r}
 hexany_chord_table <- cps_chord_table(hexany_scale_table)
