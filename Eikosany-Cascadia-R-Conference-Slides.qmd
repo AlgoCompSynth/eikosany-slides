@@ -53,6 +53,23 @@ octave
 -   Alternative tuning - anything else
 :::
 
+## 12-TET Scale Table
+
+```{r}
+library(eikosany)
+vanilla <- et_scale_table() # default is 12-TET
+print(vanilla)
+
+```
+
+## Cents??
+
+::: incremental
+-   A logarithmic measure used by scale theorists
+-   1 cent = 1/100th of a semitone
+-   12 semitones = 1200 cents = 1 octave = ratio of 2/1
+:::
+
 ## Alternative tunings
 
 ::: incremental
@@ -91,9 +108,9 @@ octave
 -   Start with a set of N *harmonic factors*
 -   For even number of factors N, `choose` = N/2
 -   For an odd number, `choose` = either N/2 - 1/2 or N/2 + 1/2
-    -   Four factors: `choose` 2: six combinations
-    -   Five factors: `choose` 2 or 3: ten combinations
-    -   Six factors: `choose` 3: 20 combinations
+    -   Four factors: `choose` 2: six combinations (hexany)
+    -   Five factors: `choose` 2 or 3: ten combinations (dekany)
+    -   Six factors: `choose` 3: 20 combinations (eikosany)
     -   Pascal's Triangle is your friend
 :::
 
@@ -117,11 +134,9 @@ octave
 -   Sort: `1 7/6 5/4 35/24 5/3 7/4`
 :::
 
-## Using the package! {.smaller}
+## Using the package!
 
 ```{r}
-remotes::install_github("AlgoCompSynth/eikosany", quiet = TRUE)
-library(eikosany)
 hexany_scale_table <- cps_scale_table(
   harmonics = c(1, 3, 5, 7),
   choose = 2
@@ -129,17 +144,6 @@ hexany_scale_table <- cps_scale_table(
 print(hexany_scale_table)
 
 ```
-
--   The prime on the bottom `note_name` indicates the next octave
-
-## Cents??
-
-::: incremental
--   A logarithmic measure used by scale theorists
--   1 cent = 1/100th of a semitone
--   12 semitones = 1200 cents = 1 octave = ratio of 2/1
-:::
-
 ## The Chord Table
 
 ::: incremental
@@ -161,7 +165,7 @@ print(hexany_scale_table)
 their names
 :::
 
-# The Hexany Chord Table {.smaller}
+## The Hexany Chord Table
 
 ```{r}
 hexany_chord_table <- cps_chord_table(hexany_scale_table)
@@ -248,13 +252,13 @@ print(scale_map)
 ## Make Waves!
 
 ```{r}
-scale_multisample(
-  keyboard_map = scale_map,
-  start_note_number = 60,
-  end_note_number = 80,
-  duration_sec = 2,
-  output_directory = "./Eikosany-Scale-Multisample"
-)
+# scale_multisample(
+#   keyboard_map = scale_map,
+#   start_note_number = 60,
+#   end_note_number = 80,
+#   duration_sec = 2,
+#   output_directory = "./Eikosany-Scale-Multisample"
+# )
 
 ```
 
@@ -265,8 +269,8 @@ scale_multisample(
 ## (Optional) Play Some Eikosany Chords
 
 ```{r}
-eikosany_scale_table <- cps_scale_table()
-render_cps_chords(eikosany_scale_table, "./eikosany_chords")
+# eikosany_scale_table <- cps_scale_table()
+# render_cps_chords(eikosany_scale_table, "./eikosany_chords")
 
 ```
 
