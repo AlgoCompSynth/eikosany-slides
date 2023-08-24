@@ -240,9 +240,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Eikosany - Cascadia R Conference Slides",
+    "title": "Eikosany R Package - Cascadia R Conference Slides and Media",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "This is the website for the slides I presented at the Cascadia R Conference in Seattle, WA on August 19, 2023. I’ve expanded the slides a bit to add the WAV files for the 1-3-5-7 Hexany scale and chords to the site.\nLinks:\n\nThis site: https://algocompsynth.github.io/eikosany-slides\nEikosany package pkgdown site: https://algocompsynth.github.io/eikosany\n\n\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
     "objectID": "about.html",
