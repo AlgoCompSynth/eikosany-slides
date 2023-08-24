@@ -165,7 +165,7 @@
     "href": "Eikosany-Cascadia-R-Conference-Slides.html#make-waves",
     "title": "Eikosany: Microtonal Algorithmic Composition with R",
     "section": "Make Waves!",
-    "text": "Make Waves!\n\nscale_multisample(\n  keyboard_map = scale_map,\n  start_note_number = 60,\n  end_note_number = 80,\n  duration_sec = 2,\n  output_directory = \"./Eikosany-Scale-Multisample\"\n)\n\n[1] \"./Eikosany-Scale-Multisample\""
+    "text": "Make Waves!\n\nscale_multisample(\n keyboard_map = scale_map,\n start_note_number = 60,\n end_note_number = 80,\n duration_sec = 2,\n output_directory = \"./Eikosany-Scale-Multisample\"\n)\n\n[1] \"./Eikosany-Scale-Multisample\""
   },
   {
     "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#optional-play-files-with-a-media-player",

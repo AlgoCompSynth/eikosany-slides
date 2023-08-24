@@ -47,8 +47,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Types of scales
 
 ::: incremental
--   Standard "western" tuning - 12 equally-spaced tones /
-octave
+-   Standard "western" tuning - 12 equally-spaced tones / octave
     -   abbreviated 12-TET (12 tone equal temperament) or 12-EDO (12 equal divisions of the octave)
 -   Alternative tuning - anything else
 :::
@@ -119,9 +118,9 @@ print(vanilla)
 ::: incremental
 -   Take all the combinations of the factors with `choose` elements
 -   Take the products of the combinations
--   Reduce the products to ratios in [1, 2)
+-   Reduce the products to ratios in \[1, 2)
     1.  Divide all by smallest product
-    2.  Multiply or divide by powers of two to get values in [1, 2)
+    2.  Multiply or divide by powers of two to get values in \[1, 2)
 -   Sort
 :::
 
@@ -144,6 +143,7 @@ hexany_scale_table <- cps_scale_table(
 print(hexany_scale_table)
 
 ```
+
 ## The Chord Table
 
 ::: incremental
@@ -161,8 +161,7 @@ print(hexany_scale_table)
 -   Roughly corresponds to major and minor chords
 -   Four factors: four harmonic triads and four subharmonic triads
 -   Six factors: 15 harmonic tetrads and 15 subharmonic tetrads
-- In the chord table, the subharmonic ones have "/" in
-their names
+-   In the chord table, the subharmonic ones have "/" in their names
 :::
 
 ## The Hexany Chord Table
@@ -252,13 +251,13 @@ print(scale_map)
 ## Make Waves!
 
 ```{r}
-# scale_multisample(
-#   keyboard_map = scale_map,
-#   start_note_number = 60,
-#   end_note_number = 80,
-#   duration_sec = 2,
-#   output_directory = "./Eikosany-Scale-Multisample"
-# )
+scale_multisample(
+ keyboard_map = scale_map,
+ start_note_number = 60,
+ end_note_number = 80,
+ duration_sec = 2,
+ output_directory = "./Eikosany-Scale-Multisample"
+)
 
 ```
 
@@ -269,8 +268,8 @@ print(scale_map)
 ## (Optional) Play Some Eikosany Chords
 
 ```{r}
-# eikosany_scale_table <- cps_scale_table()
-# render_cps_chords(eikosany_scale_table, "./eikosany_chords")
+eikosany_scale_table <- cps_scale_table()
+render_cps_chords(eikosany_scale_table, "./eikosany_chords")
 
 ```
 
@@ -291,11 +290,10 @@ print(scale_map)
     -   Hoping to release an album / EP on Bandcamp
 2.  Open feature requests for triage
 3.  Add consonance analysis capability [@sethares2013tuning]
-4. Remove the MIDI functionality!
-    - MIDI is a great language for 4/4 time 12-EDO music
-    - For microtonal algorithmic composition, not so much
-    - The "other tools" in the Appendix are designed to
-    deal with MIDI so I don't have to!
+4.  Remove the MIDI functionality!
+    -   MIDI is a great language for 4/4 time 12-EDO music
+    -   For microtonal algorithmic composition, not so much
+    -   The "other tools" in the Appendix are designed to deal with MIDI so I don't have to!
 :::
 
 ## Where does all this stuff live?
