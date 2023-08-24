@@ -118,9 +118,9 @@ print(vanilla)
 ::: incremental
 -   Take all the combinations of the factors with `choose` elements
 -   Take the products of the combinations
--   Reduce the products to ratios in \[1, 2)
+-   Reduce the products to ratios in [1, 2)
     1.  Divide all by smallest product
-    2.  Multiply or divide by powers of two to get values in \[1, 2)
+    2.  Multiply or divide by powers of two to get values in [1, 2)
 -   Sort
 :::
 
@@ -213,7 +213,7 @@ print(eikosany_chord_table <-
 -   So I'll emulate it in R!
 :::
 
-## First Step - Make a Keyboard Map
+## First Step - Make a Keyboard Map {.smaller}
 
 -   Maps MIDI note numbers to frequencies
 -   MIDI note numbers range from 0 to 127
@@ -222,20 +222,32 @@ print(eikosany_chord_table <-
 
 ```{r}
 # this is the whole keyboard
+hexany_map <- keyboard_map(hexany_scale_table)
 eikosany_map <- keyboard_map(eikosany_scale_table)
 
 # extract scale from middle C
-scale_map <- eikosany_map[
+hexany_scale_map <- hexany_map[
+  note_number %in% 60:66,
+  list(note_number, freq)
+]
+eikosany_scale_map <- eikosany_map[
   note_number %in% 60:80,
   list(note_number, freq)
 ]
 
 ```
 
-## The Scale Map {.smaller}
+## The Hexany Scale Map
 
 ```{r}
-print(scale_map)
+print(hexany_scale_map)
+
+```
+
+## The Eikosany Scale Map {.smaller}
+
+```{r}
+print(eikosany_scale_map)
 
 ```
 
@@ -251,25 +263,33 @@ print(scale_map)
 ## Make Waves!
 
 ```{r}
-scale_multisample(
- keyboard_map = scale_map,
- start_note_number = 60,
- end_note_number = 80,
- duration_sec = 2,
- output_directory = "./Eikosany-Scale-Multisample"
-)
+make_waves <- TRUE # set to TRUE if you want to re-render the WAVs
+if (make_waves) {
+  scale_multisample(
+   keyboard_map = hexany_scale_map,
+   start_note_number = 60,
+   end_note_number = 66,
+   duration_sec = 2,
+   output_directory = "./Hexany-Scale-Multisample"
+  )
+  scale_multisample(
+   keyboard_map = eikosany_scale_map,
+   start_note_number = 60,
+   end_note_number = 80,
+   duration_sec = 2,
+   output_directory = "./Eikosany-Scale-Multisample"
+  )
+}
 
 ```
 
-## (Optional) Play Files with a Media Player
-
--   40 seconds you'll never get back
-
-## (Optional) Play Some Eikosany Chords
+## Make CPS Chord WAVs
 
 ```{r}
-eikosany_scale_table <- cps_scale_table()
-render_cps_chords(eikosany_scale_table, "./eikosany_chords")
+  if (make_waves) {
+    render_cps_chords(hexany_scale_table, "./hexany_chords")
+    render_cps_chords(eikosany_scale_table, "./eikosany_chords")
+  }
 
 ```
 
