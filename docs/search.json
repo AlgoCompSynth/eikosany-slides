@@ -1,0 +1,254 @@
+[
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#overview-of-methods-nierhaus2009algorithmic",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#overview-of-methods-nierhaus2009algorithmic",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "Overview of Methods (Nierhaus 2009)",
+    "text": "Overview of Methods (Nierhaus 2009)\n\n\nMarkov Models / Stochastic\nGenerative Grammars\nTransition Networks\nChaos and Self-Similarity\nGenetic Algorithms\nCellular Automata\nArtificial Neural Networks"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#my-main-compositional-focus",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#my-main-compositional-focus",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "My Main Compositional Focus",
+    "text": "My Main Compositional Focus\n\n\nMarkov Models / Stochastic\nPioneered by Iannis Xenakis (Xenakis 1992)\nRandom chord progressions on microtonal harmonic structures"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#when-harry-met-iannis-2021-borasky2021a",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#when-harry-met-iannis-2021-borasky2021a",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "When Harry Met Iannis (2021) (Borasky 2021)",
+    "text": "When Harry Met Iannis (2021) (Borasky 2021)\n\n\nMicrotonal harmonic structure is Harry Partch’s Tonality Diamond (Partch 1979)\nTonality Diamond was an inspiration for Erv Wilson’s Combination Product Sets"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#types-of-scales",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#types-of-scales",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "Types of scales",
+    "text": "Types of scales\n\n\nStandard “western” tuning - 12 equally-spaced tones / octave\n\nabbreviated 12-TET (12 tone equal temperament) or 12-EDO (12 equal divisions of the octave)\n\nAlternative tuning - anything else"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#tet-scale-table",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#tet-scale-table",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "12-TET Scale Table",
+    "text": "12-TET Scale Table\n\nlibrary(eikosany)\nvanilla &lt;- et_scale_table() # default is 12-TET\nprint(vanilla)\n\n    note_name    ratio ratio_frac ratio_cents interval_cents degree\n 1:         C 1.000000          1           0             NA      0\n 2:     C#|Db 1.059463  1461/1379         100            100      1\n 3:         D 1.122462  1714/1527         200            100      2\n 4:     D#|Eb 1.189207  1785/1501         300            100      3\n 5:         E 1.259921    635/504         400            100      4\n 6:         F 1.334840  3249/2434         500            100      5\n 7:     F#|Gb 1.414214   1393/985         600            100      6\n 8:         G 1.498307  2213/1477         700            100      7\n 9:     G#|Ab 1.587401   1008/635         800            100      8\n10:         A 1.681793  3002/1785         900            100      9\n11:     A#|Bb 1.781797   1527/857        1000            100     10\n12:         B 1.887749  2943/1559        1100            100     11\n13:        C' 2.000000          2        1200            100     12"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#cents",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#cents",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "Cents??",
+    "text": "Cents??\n\n\nA logarithmic measure used by scale theorists\n1 cent = 1/100th of a semitone\n12 semitones = 1200 cents = 1 octave = ratio of 2/1"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#alternative-tunings",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#alternative-tunings",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "Alternative tunings",
+    "text": "Alternative tunings\n\n\nscales from other cultures\n“just” scales - scales based on rational numbers\nscale repetition periods different from the octave\nscale repetition period divided into more than 12 tones\ncombinations of the above!"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#microtonal-music",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#microtonal-music",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "Microtonal music",
+    "text": "Microtonal music\n\n\nUsually defined as an octave divided into more than 12 tones\nCommon microtonal scales\n\n19-TET\n24-TET aka quarter tones\n31-TET"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#ervin-wilson-june-11-1928-december-8-2016",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#ervin-wilson-june-11-1928-december-8-2016",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "Ervin Wilson (June 11, 1928 – December 8, 2016)",
+    "text": "Ervin Wilson (June 11, 1928 – December 8, 2016)\n\n\nMexican/American (dual citizen)\nProlific music theorist\nDeveloped keyboard layouts, scales and lattices\nPrimarily known for theories of microtonal just scales"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#combination-product-set-scales-narushima2019microtonality-chapter-6",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#combination-product-set-scales-narushima2019microtonality-chapter-6",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "Combination Product Set Scales (Narushima 2019, chap. 6)",
+    "text": "Combination Product Set Scales (Narushima 2019, chap. 6)\n\n\nFocus of the eikosany package\nStart with a set of N harmonic factors\nFor even number of factors N, choose = N/2\nFor an odd number, choose = either N/2 - 1/2 or N/2 + 1/2\n\nFour factors: choose 2: six combinations (hexany)\nFive factors: choose 2 or 3: ten combinations (dekany)\nSix factors: choose 3: 20 combinations (eikosany)\nPascal’s Triangle is your friend"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#making-the-scale",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#making-the-scale",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "Making the Scale",
+    "text": "Making the Scale\n\n\nTake all the combinations of the factors with choose elements\nTake the products of the combinations\nReduce the products to ratios in [1, 2)\n\nDivide all by smallest product\nMultiply or divide by powers of two to get values in [1, 2)\n\nSort"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#example-1-3-5-7-hexany",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#example-1-3-5-7-hexany",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "Example: 1-3-5-7 Hexany",
+    "text": "Example: 1-3-5-7 Hexany\n\n\nProducts of combinations: 1*3, 1*5, 1*7, 3*5, 3*7, 5*7\nRaw ratios (divide by smallest product): 1 5/3 7/3 5 7 35/3\nReduce: 1 5/3 7/6 5/4 7/4 35/24\nSort: 1 7/6 5/4 35/24 5/3 7/4"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#using-the-package",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#using-the-package",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "Using the package!",
+    "text": "Using the package!\n\nhexany_scale_table &lt;- cps_scale_table(\n  harmonics = c(1, 3, 5, 7),\n  choose = 2\n)\nprint(hexany_scale_table)\n\n   note_name    ratio ratio_frac ratio_cents interval_cents degree\n1:       1x3 1.000000          1      0.0000             NA      0\n2:       1x7 1.166667        7/6    266.8709      266.87091      1\n3:       3x5 1.250000        5/4    386.3137      119.44281      2\n4:       5x7 1.458333      35/24    653.1846      266.87091      3\n5:       1x5 1.666667        5/3    884.3587      231.17409      4\n6:       3x7 1.750000        7/4    968.8259       84.46719      5\n7:      1x3' 2.000000          2   1200.0000      231.17409      6"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#the-chord-table",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#the-chord-table",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "The Chord Table",
+    "text": "The Chord Table\n\n\nLike scales, chords are combinations of harmonic factors\nCurrently only works for even number of factors\nFor a chord table, we take choose + 1 combinations\n\nFour factors: three combinations (four triads)\nSix factors: four combinations (15 tetrads)"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#harmonic-and-subharmonic-chords",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#harmonic-and-subharmonic-chords",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "Harmonic and Subharmonic Chords",
+    "text": "Harmonic and Subharmonic Chords\n\n\nEach chord has a harmonic and subharmonic form\nRoughly corresponds to major and minor chords\nFour factors: four harmonic triads and four subharmonic triads\nSix factors: 15 harmonic tetrads and 15 subharmonic tetrads\nIn the chord table, the subharmonic ones have “/” in their names"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#the-hexany-chord-table",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#the-hexany-chord-table",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "The Hexany Chord Table",
+    "text": "The Hexany Chord Table\n\nhexany_chord_table &lt;- cps_chord_table(hexany_scale_table)\nprint(hexany_chord_table)\n\n      chord degrees chord_index is_subharm\n1:    1:3:5   1:3:5           1          0\n2: /1:/3:/5   0:2:4           1          1\n3:    1:3:7   2:3:4           2          0\n4: /1:/3:/7   0:1:5           2          1\n5:    1:5:7   0:2:5           3          0\n6: /1:/5:/7   1:3:4           3          1\n7:    3:5:7   0:1:4           4          0\n8: /3:/5:/7   2:3:5           4          1"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#the-1-3-5-7-9-11-eikosany",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#the-1-3-5-7-9-11-eikosany",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "The 1-3-5-7-9-11 Eikosany",
+    "text": "The 1-3-5-7-9-11 Eikosany\n\nSix harmonic factors, choose 3\n\n\neikosany_scale_table &lt;- cps_scale_table(\n  harmonics = c(1, 3, 5, 7, 9, 11),\n  choose = 3\n)"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#the-eikosany-scale-table",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#the-eikosany-scale-table",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "The Eikosany Scale Table",
+    "text": "The Eikosany Scale Table\n\nprint(eikosany_scale_table)\n\n    note_name    ratio ratio_frac ratio_cents interval_cents degree\n 1:     1x3x5 1.000000          1     0.00000             NA      0\n 2:    5x9x11 1.031250      33/32    53.27294       53.27294      1\n 3:     1x7x9 1.050000      21/20    84.46719       31.19425      2\n 4:    1x3x11 1.100000      11/10   165.00423       80.53704      3\n 5:     3x5x9 1.125000        9/8   203.91000       38.90577      4\n 6:     1x5x7 1.166667        7/6   266.87091       62.96090      5\n 7:    3x9x11 1.237500      99/80   368.91423      102.04332      6\n 8:    1x7x11 1.283333      77/60   431.87513       62.96090      7\n 9:     5x7x9 1.312500      21/16   470.78091       38.90577      8\n10:    3x5x11 1.375000       11/8   551.31794       80.53704      9\n11:     1x3x7 1.400000        7/5   582.51219       31.19425     10\n12:    7x9x11 1.443750    231/160   635.78514       53.27294     11\n13:     1x5x9 1.500000        3/2   701.95500       66.16987     12\n14:     3x7x9 1.575000      63/40   786.42219       84.46719     13\n15:    5x7x11 1.604167      77/48   818.18885       31.76665     14\n16:    1x9x11 1.650000      33/20   866.95923       48.77038     15\n17:     3x5x7 1.750000        7/4   968.82591      101.86668     16\n18:     1x3x9 1.800000        9/5  1017.59629       48.77038     17\n19:    1x5x11 1.833333       11/6  1049.36294       31.76665     18\n20:    3x7x11 1.925000      77/40  1133.83013       84.46719     19\n21:    1x3x5' 2.000000          2  1200.00000       66.16987     20\n    note_name    ratio ratio_frac ratio_cents interval_cents degree"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#the-eikosany-chord-table",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#the-eikosany-chord-table",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "The Eikosany Chord Table",
+    "text": "The Eikosany Chord Table\n\nprint(eikosany_chord_table &lt;-\n  cps_chord_table(eikosany_scale_table)\n)\n\n           chord     degrees chord_index is_subharm\n 1:      1:3:5:7   1:6:11:15           1          0\n 2:  /1:/3:/5:/7   0:5:10:16           1          1\n 3:      1:3:5:9  7:11:14:19           2          0\n 4:  /1:/3:/5:/9   0:4:12:17           2          1\n 5:     1:3:5:11   2:8:11:13           3          0\n 6: /1:/3:/5:/11    0:3:9:18           3          1\n 7:      1:3:7:9   1:9:14:18           4          0\n 8:  /1:/3:/7:/9  2:10:13:17           4          1\n 9:     1:3:7:11    1:4:8:12           5          0\n10: /1:/3:/7:/11   3:7:10:19           5          1\n11:     1:3:9:11   5:8:14:16           6          0\n12: /1:/3:/9:/11   3:6:15:17           6          1\n13:      1:5:7:9    3:6:9:19           7          0\n14:  /1:/5:/7:/9    2:5:8:12           7          1\n15:     1:5:7:11   4:6:13:17           8          0\n16: /1:/5:/7:/11   5:7:14:18           8          1\n17:     1:5:9:11 10:13:16:19           9          0\n18: /1:/5:/9:/11  1:12:15:18           9          1\n19:     1:7:9:11    0:4:9:16          10          0\n20: /1:/7:/9:/11   2:7:11:15          10          1\n21:      3:5:7:9   3:7:15:18          11          0\n22:  /3:/5:/7:/9   4:8:13:16          11          1\n23:     3:5:7:11  2:12:15:17          12          0\n24: /3:/5:/7:/11  9:14:16:19          12          1\n25:     3:5:9:11    2:5:7:10          13          0\n26: /3:/5:/9:/11     1:4:6:9          13          1\n27:     3:7:9:11   0:5:12:18          14          0\n28: /3:/7:/9:/11  6:11:13:19          14          1\n29:     5:7:9:11   0:3:10:17          15          0\n30: /5:/7:/9:/11   1:8:11:14          15          1\n           chord     degrees chord_index is_subharm"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#what-does-it-sound-like",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#what-does-it-sound-like",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "What Does It Sound Like?",
+    "text": "What Does It Sound Like?\n\n\nTo hear the scale:\n\nGet a synthesizer\nMap the keys of the synthesizer to the notes of the scale\nPlay the keys\n\nBut that’s kind of expensive and I’m in a hurry\nSo I’ll emulate it in R!"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#first-step---make-a-keyboard-map",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#first-step---make-a-keyboard-map",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "First Step - Make a Keyboard Map",
+    "text": "First Step - Make a Keyboard Map\n\nMaps MIDI note numbers to frequencies\nMIDI note numbers range from 0 to 127\nMIDI note number 60 is middle C\nOur 20-note scale is note numbers 60:79\n\n\n# this is the whole keyboard\neikosany_map &lt;- keyboard_map(eikosany_scale_table)\n\n# extract scale from middle C\nscale_map &lt;- eikosany_map[\n  note_number %in% 60:80,\n  list(note_number, freq)\n]"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#the-scale-map",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#the-scale-map",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "The Scale Map",
+    "text": "The Scale Map\n\nprint(scale_map)\n\n    note_number     freq\n 1:          60 261.6256\n 2:          61 269.8014\n 3:          62 274.7068\n 4:          63 287.7881\n 5:          64 294.3288\n 6:          65 305.2298\n 7:          66 323.7616\n 8:          67 335.7528\n 9:          68 343.3836\n10:          69 359.7352\n11:          70 366.2758\n12:          71 377.7219\n13:          72 392.4383\n14:          73 412.0603\n15:          74 419.6910\n16:          75 431.6822\n17:          76 457.8447\n18:          77 470.9260\n19:          78 479.6469\n20:          79 503.6292\n21:          80 523.2511\n    note_number     freq"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#second-step---make-waves",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#second-step---make-waves",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "Second Step - Make Waves!",
+    "text": "Second Step - Make Waves!\n\n\nuses seewave and tuneR (Sueur 2018)\ncreates a multisample - a collection of WAV files\n\ncan be used in sample-based workflows\nemulates multisamples captured by 1010music Blackbox"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#make-waves",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#make-waves",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "Make Waves!",
+    "text": "Make Waves!\n\nscale_multisample(\n  keyboard_map = scale_map,\n  start_note_number = 60,\n  end_note_number = 80,\n  duration_sec = 2,\n  output_directory = \"./Eikosany-Scale-Multisample\"\n)\n\n[1] \"./Eikosany-Scale-Multisample\""
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#optional-play-files-with-a-media-player",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#optional-play-files-with-a-media-player",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "(Optional) Play Files with a Media Player",
+    "text": "(Optional) Play Files with a Media Player\n\n40 seconds you’ll never get back"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#optional-play-some-eikosany-chords",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#optional-play-some-eikosany-chords",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "(Optional) Play Some Eikosany Chords",
+    "text": "(Optional) Play Some Eikosany Chords\n\neikosany_scale_table &lt;- cps_scale_table()\nrender_cps_chords(eikosany_scale_table, \"./eikosany_chords\")\n\n[1] \"./eikosany_chords\""
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#current-status",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#current-status",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "Current status",
+    "text": "Current status\n\n\nEnough infrastructure to manually make music!\n\n(which was my initial goal)\n\nDocumentation - you’re looking at it"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#current-plan",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#current-plan",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "Current plan",
+    "text": "Current plan\n\n\nClean up documentation and do a first release (August)\n\nHoping to release an album / EP on Bandcamp\n\nOpen feature requests for triage\nAdd consonance analysis capability (Sethares 2013)\nRemove the MIDI functionality!\n\nMIDI is a great language for 4/4 time 12-EDO music\nFor microtonal algorithmic composition, not so much\nThe “other tools” in the Appendix are designed to deal with MIDI so I don’t have to!"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#where-does-all-this-stuff-live",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#where-does-all-this-stuff-live",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "Where does all this stuff live?",
+    "text": "Where does all this stuff live?\n\nGitHub: https://github.com/AlgoCompSynth/eikosany\nPkgdown: https://algocompsynth.github.io/eikosany\nThese slides: https://github.com/AlgoCompSynth/eikosany-slides"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#pc-mac-ios-software",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#pc-mac-ios-software",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "PC / Mac / iOS Software",
+    "text": "PC / Mac / iOS Software\n\nScala. Note: this is not the Scala multi-paradigm programming language that runs on the Java Virtual Machine. This is a specialized tool for working with musical scales.\nODDSound MTS-ESP. This is a plugin for digital audio workstations (DAWs) that facilitates production of microtonal music. I own a copy and if you’re making microtonal electronic music, you should too. The Eikosany and other scales Erv Wilson developed all ship with MTS-ESP, so you don’t really need my R package to compose with them.\nEntonal Studio. Entonal Studio is a user interface package for microtonal composition. It can operate as a standalone application, a plugin host or a plugin. I own a copy of Entonal Studio and recommend it highly."
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#pc-mac-ios-software-continued",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#pc-mac-ios-software-continued",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "PC / Mac / iOS Software (continued)",
+    "text": "PC / Mac / iOS Software (continued)\n\nInfinitone DMT. From the Infinitone DMT FAQ:\n\n“Infinitone DMT is a DAW plugin and standalone that empowers musicians to easily use micro-tuning within their own workflow.\n…\n“As a plugin, Infinitone DMT is inserted in your DAW as a MIDI effect.\n…\n“The standalone can be used separately from a DAW, or it can be used in conjunction with a DAW by routing MIDI data from the DAW to the standalone (and back).”"
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#pc-mac-ios-software-continued-1",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#pc-mac-ios-software-continued-1",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "PC / Mac / iOS Software (continued)",
+    "text": "PC / Mac / iOS Software (continued)\n\nUniversal Tuning Editor. Universal Tuning Editor is an application for computing and visualizing microtonal scales and tunings, and includes tools to interface with hardware and software synthesizers.\nWilsonic. This is a free app that runs on iOS devices. I don’t have any iOS devices so I’ve never used this.\nThere is also a version of Wilsonic in development for use with ODDSound MTS-ESP. See https://wilsonic.co/downloads/downloads-mts-esp/ for the details.\nSurge XT. Surge XT is an open source full featured software synthesizer. The Surge XT community has invested a significant level of effort into supporting alternate tuning systems.\n\nSee the Xenharmonic Wiki List of microtonal software plugins for more ways of making microtonal music."
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#websites",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#websites",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "Websites",
+    "text": "Websites\n\nKraig Grady’s Anaphoria Wilson Archive Australian-American composer Kraig Grady studied with Erv Wilson for many years and has collected Wilson’s writings.\nSevish’s Scale Workshop. This is a web-based tool for working with musical scales.\nLeimma and Apotome. These tools, by Khyam Allami and Counterpoint, are browser-based applications for creating microtonal scales and making generative music with them."
+  },
+  {
+    "objectID": "Eikosany-Cascadia-R-Conference-Slides.html#youtube-playlists",
+    "href": "Eikosany-Cascadia-R-Conference-Slides.html#youtube-playlists",
+    "title": "Eikosany: Microtonal Algorithmic Composition with R",
+    "section": "YouTube Playlists",
+    "text": "YouTube Playlists\n\nSurfing the Sonic Sky\nCombination Product Sets - Music\nCombination Product Sets - Theory"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Eikosany - Cascadia R Conference Slides",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  }
+]
