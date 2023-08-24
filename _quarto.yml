@@ -8,6 +8,7 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: Eikosany-Cascadia-R-Conference-Slides.qmd
       - about.qmd
 
 format:
